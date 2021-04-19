@@ -16,7 +16,7 @@ export default function Home() {
         <div className="mt-4 grid grid-cols-1 gap-3 text-center">
           <a
             className="gumroad-button"
-            href="https://gumroad.com/l/bite-size-linux"
+            href="https://gumroad.com/bite-size-linux"
           >
             Buy my product (gumroad.com)
           </a>
