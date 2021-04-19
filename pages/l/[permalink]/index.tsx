@@ -199,9 +199,7 @@ export default function ProductPage({ product }: ProductPageProps) {
 
   return (
     <div
-      className={`${
-        isOverlay ? '' : 'bg-gray-100 px-4 py-12'
-      } grid place-items-center w-full h-full min-h-screen`}
+      className={`px-2 py-2 sm:px-8 sm:py-8  bg-gray-100 grid place-items-center w-full h-full min-h-screen`}
     >
       <SEO
         title={(appName) => `${product.product_data.name} – ${appName}`}
@@ -209,9 +207,7 @@ export default function ProductPage({ product }: ProductPageProps) {
       />
 
       <img
-        className={`${
-          isOverlay ? 'sticky' : 'absolute'
-        } left-0 top-0 min-w-screen w-full`}
+        className={`fixed left-0 top-0 z-10 min-w-screen w-full`}
         src="/images/header_bar.png"
       />
       <div className="grid place-items-center max-w-5xl mx-auto shadow-sm rounded-b-md">

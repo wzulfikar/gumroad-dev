@@ -4,8 +4,8 @@
   iframe.style.display = 'none'; // Change to `block` to make the container visible
   iframe.style.border = 'none';
   iframe.style.height = '100%';
-  iframe.style.width = '100%';
-  iframe.style.maxWidth = '320px';
+  iframe.style.width = '90vw';
+  iframe.style.maxWidth = '1000px';
   iframe.style.padding = '1rem 0.5rem';
   iframe.style.paddingBottom = '2.5rem';
 
