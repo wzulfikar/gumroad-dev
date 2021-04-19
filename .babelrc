@@ -1,0 +1,20 @@
+{
+    "presets": [
+        "next/babel"
+    ],
+    "plugins": [
+        [
+            "import",
+            {
+                "libraryName": "antd"
+            }
+        ]
+    ],
+    "env": {
+        "test": {
+            "plugins": [
+                "dynamic-import-node"
+            ]
+        }
+    }
+}
