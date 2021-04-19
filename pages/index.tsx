@@ -105,6 +105,30 @@ export default function Home() {
           </a>
           ). This makes the product pages fast, scalable, and cacheable at edge.
         </p>
+        <p>To create your own button, add this code to your html:</p>
+        <pre className="overflow-x-auto">
+          {`
+  <script
+    src="https://gumroad.dev/gumroad-dev.js"
+    data-gumroad-domains="gumroad.com,gumroad.dev"
+    defer
+  ></script>
+  <a class="gumroad-button" href="https://gumroad.dev/cefip">
+    Buy my product
+  </a>`}
+        </pre>
+        <p className="pt-4">
+          Or check this{' '}
+          <a
+            className="text-blue-900 hover:underline"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://jsbin.com/nikadoc/edit?html,output"
+          >
+            JSBin page
+          </a>{' '}
+          for demo.
+        </p>
       </div>
 
       <div className="max-w-sm w-full mx-auto mt-10">
