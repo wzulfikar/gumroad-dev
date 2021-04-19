@@ -176,10 +176,14 @@
   links.forEach((link) => {
     const overlayUrl = getDisplayUrl(link.href);
 
-    // Don't use overlay if data-overlay is false
+    // Return early to skip overlay logic if data-overlay is false
     if (link.dataset.overlay === 'false') {
       link.onclick = (e) => {
         e.preventDefault();
+
+        // Make sure link redirect is correct.
+        // - wrong: gumroad.com/cefip
+        // - correct: gumroad.com/l/cefip
         window.location.href = overlayUrl;
       };
       return;
