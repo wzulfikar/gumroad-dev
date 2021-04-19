@@ -153,7 +153,7 @@
   }
 
   function getDomains() {
-    let domains = ['gum.co', 'gumroad.com'];
+    let domains = ['gum.co', 'gumroad.com', 'gumroad.dev'];
 
     // Handle custom domains
     const customDomains = d.querySelector('script[data-gumroad-domains]');
