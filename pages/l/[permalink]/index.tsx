@@ -7,10 +7,12 @@ import formatMoney from '@src/lib/numbers/formatMoney';
 import { Product } from '@src/lib/gumroad/types';
 import PriceTag from '@src/components/PriceTag';
 
-function HeaderImage({ src, alt }) {
+function HeaderImage({ src, alt, isOverlay = false }) {
   return (
     <img
-      className="block p-0 my-0 mx-auto w-full font-normal leading-5 text-gray-600 align-baseline border rounded-t-md"
+      className={`${
+        isOverlay ? '' : 'rounded-t-md'
+      } block p-0 my-0 mx-auto w-full font-normal leading-5 text-gray-600 align-baseline border`}
       src={src}
       alt={alt}
     />
@@ -98,7 +100,7 @@ function Sidebar({
   const [variant, setVariant] = useState(0);
 
   return (
-    <div className="relative pt-2 m-0 w-full font-normal leading-5 text-gray-600 align-baseline border-0 md:flex-grow-0 md:flex-shrink-0 box-border sticky top-3">
+    <div className="pt-2 m-0 w-full font-normal leading-5 text-gray-600 align-baseline border-0 md:flex-grow-0 md:flex-shrink-0 box-border sticky top-3">
       <div className="p-0 m-0 leading-5 align-baseline border-0">
         <form className="p-0 m-0 text-gray-600 align-baseline border-0">
           <div className="p-0 m-0 align-baseline border-0">
@@ -166,6 +168,7 @@ export default function ProductPage({ product }: ProductPageProps) {
 
   const [shouldCollapse, setShouldCollapse] = useState(false);
   const [collapsed, setCollapsed] = useState(true);
+  const [isOverlay, setIsOverlay] = useState(false);
 
   const contentRef = useRef(null);
 
@@ -175,6 +178,7 @@ export default function ProductPage({ product }: ProductPageProps) {
       (event) => {
         parentRef.current = event.source;
         parentRef.current.postMessage({ type: 'frame.mounted' }, event.origin);
+        setIsOverlay(true);
       },
       false
     );
@@ -198,19 +202,29 @@ export default function ProductPage({ product }: ProductPageProps) {
   }
 
   return (
-    <div className="grid place-items-center w-full h-full min-h-screen bg-gray-100 px-4 py-12">
+    <div
+      className={`${
+        isOverlay ? '' : 'bg-gray-100 px-4 py-12'
+      } grid place-items-center w-full h-full min-h-screen`}
+    >
       <SEO
         title={(appName) => `${product.product_data.name} – ${appName}`}
         path={`/l/${product.permalink}`}
       />
 
       <img
-        className="absolute left-0 top-0 min-w-screen w-full"
+        className={`${
+          isOverlay ? 'sticky' : 'absolute'
+        } left-0 top-0 min-w-screen w-full`}
         src="/images/header_bar.png"
       />
       <div className="grid place-items-center max-w-5xl mx-auto shadow-sm rounded-b-md">
         {/* Header image */}
-        <HeaderImage src={product.image.url} alt={product.image.title} />
+        <HeaderImage
+          src={product.image.url}
+          alt={product.image.title}
+          isOverlay={isOverlay}
+        />
 
         {/* Content */}
         <div className="bg-white grid grid-cols-1 sm:grid-cols-10 border py-6 px-6 gap-2 rounded-b-md">

@@ -5,6 +5,8 @@
   iframe.style.border = 'none';
   iframe.style.height = '100%';
   iframe.style.width = '100%';
+  iframe.style.maxWidth = '320px';
+  iframe.style.padding = '1rem 0.5rem';
 
   // Create iframe container
   const container = document.createElement('div');
