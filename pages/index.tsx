@@ -45,7 +45,7 @@ export default function Home() {
               className="text-blue-800 hover:underline"
               target="_blank"
               rel="noopener noreferrer"
-              href="https://gumroad.com/l/cefip"
+              href="https://gumroad.com/cefip"
             >
               gumroad.com/l/cefip
             </a>{' '}
@@ -71,6 +71,7 @@ export default function Home() {
         </p>
         -{' '}
         <a
+          data-overlay="false"
           className="text-blue-900 hover:underline"
           href="https://gumroad.dev/api/products/cefip"
         >
