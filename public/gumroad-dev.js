@@ -193,10 +193,13 @@
 
   const links = d.querySelectorAll(getDomainSelector());
   links.forEach((link) => {
+    // Skip non-product links
+    if (link.dataset.product === 'false') return;
+
     const overlayUrl = getDisplayUrl(link.href);
 
     // Return early to skip overlay logic if data-overlay is false
-    if (link.dataset.overlay === 'false' && link.dataset.product !== 'false') {
+    if (link.dataset.overlay === 'false') {
       link.onclick = (e) => {
         e.preventDefault();
 
