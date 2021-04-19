@@ -8,7 +8,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export default function Home() {
   return (
     <div className={`${styles.container} dark:bg-[#111] vercel`}>
-      <h1>Hello Gumroad! Check this out:</h1>
+      <h1 className="mt-10 sm:mt-0">Hello Gumroad! Check this out:</h1>
 
       <div className="mt-10 max-w-sm w-full mx-auto">
         <h1>Gumroad Button Widget</h1>
