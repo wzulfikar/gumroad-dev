@@ -12,15 +12,15 @@ export default function Home() {
       <div className="mt-10 max-w-sm w-full mx-auto">
         <h1>Gumroad Button Widget</h1>
         <div className="mt-4 grid grid-cols-1 gap-3 text-center">
-          <a className="gumroad-button" href="https://gumroad.com/cefip">
+          <a className="gumroad-button" href="https://gumroad.com/bite-size-linux">
             Buy my product (gumroad.com)
           </a>
-          <a className="gumroad-button" href={`${baseUrl}/cefip`}>
+          <a className="gumroad-button" href={`${baseUrl}/bite-size-linux`}>
             Buy my product (gumroad.dev)
           </a>
           <a
             className="gumroad-button"
-            href={`${baseUrl}/cefip`}
+            href={`${baseUrl}/bite-size-linux`}
             data-overlay="false"
           >
             Buy my product (no-overlay)
@@ -37,6 +37,29 @@ export default function Home() {
         </p>
         <p>Example: </p>
         <ul>
+          <li>
+            - From{' '}
+            <a
+              data-overlay="false"
+              className="text-blue-800 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://gumroad.com/bite-size-linux"
+            >
+              gumroad.com/l/bite-size-linux
+            </a>{' '}
+            to{' '}
+            <Link href="/l/bite-size-linux">
+              <a
+                data-overlay="false"
+                className="text-blue-800 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                gumroad.dev/l/bite-size-linux
+              </a>
+            </Link>
+          </li>
           <li>
             - From{' '}
             <a
@@ -73,9 +96,9 @@ export default function Home() {
           data-overlay="false"
           data-product="false"
           className="text-blue-900 hover:underline"
-          href="https://gumroad.dev/api/products/cefip"
+          href="https://gumroad.dev/api/products/bite-size-linux"
         >
-          https://gumroad.dev/api/products/cefip
+          https://gumroad.dev/api/products/bite-size-linux
         </a>
       </div>
       <div className="max-w-sm w-full mx-auto mt-10">
