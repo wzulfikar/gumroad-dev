@@ -32,7 +32,7 @@
 
   const links = d.querySelectorAll(getDomainSelector());
   links.forEach((link) => {
-    // Don't augment the link if data-embed is false
+    // Don't augment the link if data-overlay is false
     if (link.dataset.embed === 'false') return;
 
     const embedUrl = getEmbedUrl(link.href);

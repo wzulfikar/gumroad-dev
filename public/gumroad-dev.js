@@ -25,7 +25,7 @@
   d.body.appendChild(container);
 
   // Create button styles
-  const buttonClass = 'onlyroad-button';
+  const buttonClass = 'gumroad-button';
   const styleRaw = `a.${buttonClass} {
     background-color: white !important;
     background-image: url("GUMROAD_ORIGIN/button/button_bar.jpg") !important;
@@ -174,24 +174,30 @@
 
   const links = d.querySelectorAll(getDomainSelector());
   links.forEach((link) => {
-    // Don't augment the link if data-embed is false
-    if (link.dataset.embed === 'false') return;
+    const overlayUrl = getDisplayUrl(link.href);
 
-    const embedUrl = getDisplayUrl(link.href);
+    // Don't use overlay if data-overlay is false
+    if (link.dataset.overlay === 'false') {
+      link.onclick = (e) => {
+        e.preventDefault();
+        window.location.href = overlayUrl;
+      };
+      return;
+    }
 
     // Override link events
     link.onclick = (e) => {
       e.preventDefault();
       loader.style.display = 'block';
       container.style.display = 'grid';
-      fetchContent(embedUrl).then(function () {
+      fetchContent(overlayUrl).then(function () {
         iframe.style.display = 'block';
         loader.style.display = 'none';
       });
     };
 
     // Prefetch content on hover and on focus
-    link.onmouseover = (e) => fetchContent(embedUrl);
+    link.onmouseover = (e) => fetchContent(overlayUrl);
     link.onfocus = link.onmouseover;
   });
 

@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import styles from '@src/styles/Home.module.css';
-import trackGoal from '@src/utils/trackGoal';
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -28,7 +27,7 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="max-w-md mx-auto">
+      <div className="max-w-sm mx-auto">
         <p>
           You can play around with other products too! Find any gumroad product
           page and replace the domain to <code>.dev</code>.
@@ -57,6 +56,25 @@ export default function Home() {
             </Link>
           </li>
         </ul>
+      </div>
+
+      <div className="mt-10 max-w-md mx-auto">
+        <h1>Gumroad Button Widget</h1>
+        <div className="mt-4 grid grid-cols-1 gap-2">
+          <a className="gumroad-button" href="https://gumroad.com/cefip">
+            Buy my product (gumroad.com)
+          </a>
+          <a className="gumroad-button" href={`${baseUrl}/cefip`}>
+            Buy my product (gumroad.dev)
+          </a>
+          <a
+            className="gumroad-button"
+            href={`${baseUrl}/cefip`}
+            data-overlay="false"
+          >
+            Buy my product (no-overlay)
+          </a>
+        </div>
       </div>
     </div>
   );
