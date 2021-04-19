@@ -3,11 +3,11 @@ import { memo } from 'react';
 const themes = {
   yellow: {
     label: {
-      default: 'group-hover:bg-gray-200',
+      default: 'group-hover:bg-gray-200 bg-gray-300',
       active: 'bg-yellow-400 text-yellow-900',
     },
     ribbon: {
-      default: 'group-hover:text-gray-200',
+      default: 'group-hover:text-gray-200 text-gray-300',
       active: 'text-yellow-400',
     },
   },
@@ -21,7 +21,7 @@ function PriceTag({ active, currency, price, theme = 'yellow' }) {
       <span
         className={`${
           active ? cls.label.active : cls.label.default
-        } relative z-10 inline-block py-1 pl-2.5 pr-2 mr-0 text-sm font-bold bg-gray-300 pointer-events-none rounded-sm`}
+        } relative z-10 inline-block py-1 pl-2.5 pr-2 mr-0 text-sm font-bold pointer-events-none rounded-sm`}
       >
         {currency}
         {price}
@@ -31,7 +31,7 @@ function PriceTag({ active, currency, price, theme = 'yellow' }) {
       <div
         className={`${
           active ? cls.ribbon.active : cls.ribbon.default
-        } absolute top-0 right-0 text-gray-300`}
+        } absolute top-0 right-0`}
       >
         <span
           style={{
