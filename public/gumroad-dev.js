@@ -7,6 +7,7 @@
   iframe.style.width = '100%';
   iframe.style.maxWidth = '320px';
   iframe.style.padding = '1rem 0.5rem';
+  iframe.style.paddingBottom = '2.5rem';
 
   // Create iframe container
   const container = document.createElement('div');
@@ -22,8 +23,24 @@
   const loader = document.createElement('div');
   loader.innerHTML = '<span style="color: white;">Loading..</span>';
 
+  const btnClose = document.createElement('button');
+  btnClose.innerHTML = 'Close';
+  btnClose.style.position = 'fixed';
+  btnClose.style.bottom = '0px';
+  btnClose.style.left = '50%';
+  btnClose.style.right = '50%';
+  btnClose.style.transform = 'translate(-50%, -50%)';
+  btnClose.style.color = 'white';
+  btnClose.style.display = 'none';
+  btnClose.onclick = () => {
+    iframe.style.display = 'none';
+    btnClose.style.display = 'none';
+    container.style.display = 'none';
+  };
+
   container.appendChild(loader);
   container.appendChild(iframe);
+  container.appendChild(btnClose);
   d.body.appendChild(container);
 
   // Create button styles
@@ -198,6 +215,7 @@
       container.style.display = 'grid';
       fetchContent(overlayUrl).then(function () {
         iframe.style.display = 'block';
+        btnClose.style.display = 'block';
         loader.style.display = 'none';
       });
     };
