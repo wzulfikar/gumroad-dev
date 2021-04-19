@@ -71,6 +71,7 @@ export default function Home() {
         -{' '}
         <a
           data-overlay="false"
+          data-product="false"
           className="text-blue-900 hover:underline"
           href="https://gumroad.dev/api/products/cefip"
         >

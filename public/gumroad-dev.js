@@ -196,7 +196,7 @@
     const overlayUrl = getDisplayUrl(link.href);
 
     // Return early to skip overlay logic if data-overlay is false
-    if (link.dataset.overlay === 'false') {
+    if (link.dataset.overlay === 'false' && link.dataset.product !== 'false') {
       link.onclick = (e) => {
         e.preventDefault();
 
