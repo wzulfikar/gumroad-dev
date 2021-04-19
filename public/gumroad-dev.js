@@ -51,7 +51,7 @@
     background-repeat: repeat-x !important;
     border-radius: 4px !important;
     box-shadow: rgba(0, 0, 0, 0.4) 0 0 2px !important;
-    color: #999 !important;
+    color: #3a3a3a !important;
     display: inline-block !important;
     font-family: -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
     font-size: 16px !important;
