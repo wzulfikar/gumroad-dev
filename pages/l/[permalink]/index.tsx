@@ -189,10 +189,6 @@ export default function ProductPage({ product }: ProductPageProps) {
     }
   }, []);
 
-  function onClickClose() {
-    parentRef.current.postMessage(JSON.stringify({ type: 'onClickClose' }));
-  }
-
   function onClickReadMore() {
     setCollapsed(false);
   }
