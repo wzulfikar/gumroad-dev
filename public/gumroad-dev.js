@@ -18,7 +18,7 @@
   container.style.background = 'hsl(0deg 0% 15% / 90%)';
 
   const loader = document.createElement('div');
-  loader.innerHTML = 'Loading..';
+  loader.innerHTML = '<span style="color: white;">Loading..</span>';
 
   container.appendChild(loader);
   container.appendChild(iframe);
