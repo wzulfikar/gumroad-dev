@@ -7,7 +7,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 export default function Home() {
   return (
     <div
-      className={`${styles.container} dark:bg-[#111] vercel bg-gray-200 py-10`}
+      className={`${styles.container} dark:bg-[#111] vercel bg-gray-200 px-4 sm:px-0 py-10`}
     >
       <h1 className="sm:mt-0">Hello Gumroad! Check this out:</h1>
 
