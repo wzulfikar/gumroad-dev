@@ -10,9 +10,9 @@ export default function Home() {
     <div className={`${styles.container} dark:bg-[#111] vercel`}>
       <h1>Hello Gumroad! Check this out:</h1>
 
-      <div className="mt-4 max-w-md mx-auto">
+      <div className="mt-10 max-w-sm w-full mx-auto">
         <h1>Gumroad Button Widget</h1>
-        <div className="mt-4 grid grid-cols-1 gap-2">
+        <div className="mt-4 grid grid-cols-1 gap-3 text-center">
           <a className="gumroad-button" href="https://gumroad.com/cefip">
             Buy my product (gumroad.com)
           </a>
@@ -29,26 +29,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="pt-5">
-        <ul>
-          <li>
-            <Link href={'/l/bite-size-linux'}>
-              <a data-overlay="false" className="text-blue-800 hover:underline">
-                - {baseUrl}/l/bite-size-linux
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/l/hypercropteam'}>
-              <a data-overlay="false" className="text-blue-800 hover:underline">
-                - {baseUrl}/l/hypercropteam
-              </a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      <div className="max-w-sm mx-auto mt-10">
+      <div className="max-w-sm w-full mx-auto mt-10">
         <h1>Product Page</h1>
         <p>
           You can play around with other products too (no overlay)! Find any
@@ -82,11 +63,11 @@ export default function Home() {
           </li>
         </ul>
       </div>
-      <div className="max-w-sm mx-auto mt-10">
+      <div className="max-w-sm w-full mx-auto mt-10">
         <h1>API Endpoint</h1>
         <p>
-          You can access product data from API endpoint (/api/products/
-          [permalink]). Example:
+          You can access product data from API endpoint (
+          <code>/api/products/[permalink]</code>). Example:
         </p>
         -{' '}
         <a
@@ -94,6 +75,16 @@ export default function Home() {
           href="https://gumroad.dev/api/products/cefip"
         >
           https://gumroad.dev/api/products/cefip
+        </a>
+      </div>
+      <div className="max-w-sm w-full mx-auto mt-10">
+        <h1>Github Repo</h1>
+        <p>You can check the code in Github:</p>-{' '}
+        <a
+          className="text-blue-900 hover:underline"
+          href="https://github.com/wzulfikar/gumroad-dev"
+        >
+          https://github.com/wzulfikar/gumroad-dev
         </a>
       </div>
     </div>
