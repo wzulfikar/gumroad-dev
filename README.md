@@ -6,6 +6,11 @@ The site is available here: https://gumroad.dev
 
 ### Reference:
 
+- You can access product data from API endpoint (/api/products/{permalink}). Example:
+
+  - https://gumroad.dev/api/products/cefip
+  - https://gumroad.dev/api/products/QHAZG
+
 - Sample usage (or [see jsbin](https://jsbin.com/nikadoc/2/edit?html,output)):
 
   ```html

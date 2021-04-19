@@ -82,6 +82,20 @@ export default function Home() {
           </li>
         </ul>
       </div>
+      <div className="max-w-sm mx-auto mt-10">
+        <h1>API Endpoint</h1>
+        <p>
+          You can access product data from API endpoint (/api/products/
+          [permalink]). Example:
+        </p>
+        -{' '}
+        <a
+          className="text-blue-900 hover:underline"
+          href="https://gumroad.dev/api/products/cefip"
+        >
+          https://gumroad.dev/api/products/cefip
+        </a>
+      </div>
     </div>
   );
 }
